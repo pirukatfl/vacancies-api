@@ -8,9 +8,15 @@
 */
 
 import router from '@adonisjs/core/services/router'
+const UsersController = () => import('#controllers/users_controller')
 
-router.get('/', async () => {
-  return {
-    hello: 'world',
-  }
-})
+router
+  .group(() => {
+    router
+      .group(() => {
+        router.get('/all-users', [UsersController, 'allUsers'])
+        router.get('/create', [UsersController, 'create'])
+      })
+      .prefix('/users')
+  })
+  .prefix('/api')
