@@ -5,6 +5,12 @@ export default class Profile extends BaseModel {
   @column({ isPrimary: true })
   declare id: number
 
+  @column()
+  declare profile: Object
+
+  @column()
+  declare user_id: number
+
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
 
