@@ -19,6 +19,6 @@ export default class Auth {
       }
     }
 
-    return 'erro ao tentar autenticar'
+    return { status: 500, message: 'erro ao tentar autenticar' }
   }
 }
