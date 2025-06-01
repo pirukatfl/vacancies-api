@@ -28,6 +28,9 @@ router
         router
           .get('/:id/detail', [ProfilesController, 'detail'])
           .use(middleware.auth({ guards: ['api'] }))
+        router
+          .get('/', [ProfilesController, 'getProfiles'])
+          .use(middleware.auth({ guards: ['api'] }))
       })
       .prefix('/profiles')
     router

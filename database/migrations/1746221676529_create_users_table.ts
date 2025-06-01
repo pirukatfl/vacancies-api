@@ -10,7 +10,8 @@ export default class extends BaseSchema {
       table.string('email', 254).notNullable().unique()
       table.string('password').notNullable()
       table.enum('permission', ['ADMIN', 'EMPLOYEE', 'COMPANY'])
-
+      table.string('hash_to_email').notNullable().unique()
+      table.boolean('isActive').defaultTo(false)
       table.timestamp('created_at').notNullable()
       table.timestamp('updated_at').nullable()
     })

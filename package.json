@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node bin/server.js",
     "build": "node ace build",
-    "dev": "node ace serve --hmr",
+    "dev": "docker-compose up && node ace serve --hmr",
     "test": "node ace test",
     "lint": "eslint .",
     "format": "prettier --write .",
@@ -55,6 +55,7 @@
     "@adonisjs/core": "^6.17.2",
     "@adonisjs/cors": "^2.2.1",
     "@adonisjs/lucid": "^21.6.0",
+    "@adonisjs/mail": "^9.2.2",
     "@vinejs/vine": "^3.0.0",
     "luxon": "^3.6.1",
     "pg": "^8.15.6",
