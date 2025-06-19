@@ -11,4 +11,8 @@ export default class UsersController {
   async allUsers() {
     return 'todos usuários'
   }
+
+  async confirmEmail({ params, response }: HttpContext) {
+    return new UserService().confirmEmail(params.hash, response)
+  }
 }

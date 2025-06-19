@@ -33,11 +33,18 @@ const mailConfig = defineConfig({
     smtp: transports.smtp({
       host: env.get('SMTP_HOST') || '',
       port: env.get('SMTP_PORT'),
+      auth: {
+        user: 'iagokorn@gmail.com',
+        pass: 'ffwc puxu alua potd',
+        type: 'login',
+      },
     }),
 
     resend: transports.resend({
-      key: env.get('RESEND_API_KEY') || '',
+      key: env.get('RESEND_API_KEY') || 'ffwc puxu alua potd',
       baseUrl: 'https://api.resend.com',
     }),
   },
 })
+
+export default mailConfig

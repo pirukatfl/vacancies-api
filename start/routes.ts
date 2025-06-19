@@ -19,6 +19,7 @@ router
       .group(() => {
         router.get('/all-users', [UsersController, 'allUsers'])
         router.post('/create', [UsersController, 'create'])
+        router.get('/confirm-email/:hash', [UsersController])
       })
       .prefix('/users')
 

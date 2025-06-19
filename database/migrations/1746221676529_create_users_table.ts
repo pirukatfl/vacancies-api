@@ -11,6 +11,7 @@ export default class extends BaseSchema {
       table.string('password').notNullable()
       table.enum('permission', ['ADMIN', 'EMPLOYEE', 'COMPANY'])
       table.string('hash_to_email').notNullable().unique()
+      table.boolean('hash_to_email_expired').notNullable().defaultTo(false)
       table.boolean('isActive').defaultTo(false)
       table.timestamp('created_at').notNullable()
       table.timestamp('updated_at').nullable()
